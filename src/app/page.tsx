@@ -1,4 +1,4 @@
-import { TravelLogs } from '@/models/TravelLog';
+import { TravelLogs } from '@/models/TravelLogs';
 import TravelLogForm from '@/components/TravelLogForm';
 
 export default async function Home() {

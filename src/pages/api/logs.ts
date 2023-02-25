@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { TravelLogs, TravelLogWithId, TravelLog } from '@/models/TravelLog';
+import { TravelLogs, TravelLogWithId, TravelLog } from '@/models/TravelLogs';
 import { WithId } from 'mongodb';
 
 export default async function handler(
