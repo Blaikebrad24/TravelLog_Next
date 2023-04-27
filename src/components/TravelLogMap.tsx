@@ -55,6 +55,9 @@ export default function TravelLogMap({ logs }: TravelLogMapProps) {
               <Marker key={log._id.toString()} position={[log.latitude, log.longitude]}>
                 <Popup offset={[0, -41]}>
                   <p className='text-lg font-bold'>{log.title}</p>
+                  <div className='flex justify-center items-center'>
+                    <img alt='' src={log.image} className='w-96'/>
+                  </div>
                   <p>{log.description}</p>
                   <p className='text-sm italic'>{new Date(log.visitDate.toString()).toLocaleDateString()}</p>
                 </Popup>

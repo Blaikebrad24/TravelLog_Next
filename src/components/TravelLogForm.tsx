@@ -71,20 +71,22 @@ export default function TravelLogForm() {
     }); // calling api here && sending json data
     const json = await response.json();
     console.log(json);
+    // @ts-ignore
+    window.location = "/";
     // TODO refresh list of travel logs
     // TODO: handle form submission errors
   };
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-md mx-auto flex gap-4 flex-col"
+      className="max-w-md mx-auto flex gap-4 flex-col my-4"
     >
       {Object.entries(travelLogInputs).map(([name, value]) => {
         const property = name as TravelLogProperty; // ???
         return (
           <div key={name} className="form-control w-full">
             <label className="label">
-              <span className="label-text">{name}</span>
+              <span className="label-text capitalize">{value.label || name}</span>
             </label>
             {value.type === 'textarea' ? (
               <textarea
