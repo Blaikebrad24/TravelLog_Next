@@ -5,6 +5,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { TravelLog, TravelLogProperty } from '@/models/TravelLog/TravelLog';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 
 const travelLogInputs: Record<
   TravelLogProperty,
@@ -45,6 +46,7 @@ const nowString = `${now.getFullYear()}-${padNum(now.getMonth() + 1)}-${padNum(
 console.log(nowString);
 
 export default function TravelLogForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -72,7 +74,7 @@ export default function TravelLogForm() {
     const json = await response.json();
     console.log(json);
     // @ts-ignore
-    window.location = "/";
+    router.push('/');
     // TODO refresh list of travel logs
     // TODO: handle form submission errors
   };
@@ -126,5 +128,9 @@ export default function TravelLogForm() {
       <button className="btn btn-success">Create</button>
     </form>
   );
+}
+
+function userRouter() {
+  throw new Error('Function not implemented.');
 }
 // function gets called if validation succeeds, if not the component will re-render with error data
