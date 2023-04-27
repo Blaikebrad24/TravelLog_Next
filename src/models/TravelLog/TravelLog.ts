@@ -21,6 +21,7 @@ export const TravelLog = z.object({
 }); // validator for zod
 
 // TravelLogProperties is now an enum : z.ZodEnum<["title","description",....]>
+// TravelLogProperties is now an Enum containing TravelLog values
 export const TravelLogProperties = TravelLog.keyof().Enum;
 
 // extracting the Types from TravelLogProperties to one object = "title" | "description" | "image" | etc

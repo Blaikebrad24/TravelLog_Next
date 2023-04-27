@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { TravelLogs, TravelLogWithId, TravelLog } from '@/models/TravelLogs';
+import { TravelLogs, TravelLogWithId, TravelLog } from '@/models/TravelLog/TravelLogs';
 import { WithId } from 'mongodb';
 
 export default async function handler(
@@ -15,7 +15,7 @@ export default async function handler(
         const validatedLog = await TravelLog.parseAsync(req.body); // using Zod to validate request body
         const insertedResult = await TravelLogs.insertOne(validatedLog); // adheres to the schema here
         return res.status(200).json({
-          ...req.body,
+          ...validatedLog,
           _id: insertedResult.insertedId,
         });
       }
@@ -29,7 +29,7 @@ export default async function handler(
     }
   } catch (e) {
     // server error
-    const error = e as unknown as Error;
+    const error = e as Error;
     return res.status(500).json({
       message: error.message,
     });

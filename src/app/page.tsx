@@ -1,18 +1,15 @@
-import { TravelLogs } from '@/models/TravelLogs';
+import { TravelLogs } from '@/models/TravelLog/TravelLogs';
 import TravelLogForm from '@/components/TravelLogForm';
+import TravelLogMap from '@/components/TravelLogMap';
 
 export default async function Home() {
   const logs = await TravelLogs.find().toArray(); // querying database here
   return (
-    <main>
-      <h1>
-        Hello World, this is the travel log app | FullStack | Nextjs | MongoDB
-      </h1>
-      <h2>There are {logs.length} in the database</h2>
-      {logs.map((log) => (
-        <div key={log._id.toString()}>{log.title}</div>
-      ))}
-      <TravelLogForm />
+    <main className='w-full h-full'>
+      
+        <TravelLogMap logs={logs} />
+        {/* <TravelLogForm/> */}
+
     </main>
   );
 }

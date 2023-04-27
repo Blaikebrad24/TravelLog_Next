@@ -4,7 +4,7 @@ import { WithId } from 'mongodb';
 // with zod you can extract a Typescript interface
 // post request is expecting type TravelLog
 
-import { TravelLog } from './TravelLog/TravelLog'; // validator for zod
+import { TravelLog } from './TravelLog'; // validator for zod
 
 export { TravelLog };
 // eslint-disable-next-line @typescript-eslint/no-redeclare

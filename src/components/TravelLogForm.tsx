@@ -71,6 +71,8 @@ export default function TravelLogForm() {
     }); // calling api here && sending json data
     const json = await response.json();
     console.log(json);
+    // TODO refresh list of travel logs
+    // TODO: handle form submission errors
   };
   return (
     <form

@@ -3,7 +3,7 @@
     *[x]Install/SetupLinter
     *[x]Setup Express App
     *[]Setup Not Found and Error Middleware
-*[x]Model Mongo DB -> start MongoDB(brew services start mongodb-community@6.0) end MongoDB (brew services stop mongodb-community@6.0), connect(mongosh)
+*[x]Model Mongo DB -> start MongoDB(brew services start mongodb-community), end MongoDB (brew services stop mongodb-community), connect(mongosh)
     *What will we store?
 *[x]Setup MongoDB model(s)
 *[x]Post/logs
